@@ -79,6 +79,32 @@ const Cipher = () => {
       <h1 className="header-cipher">Vigenere Cipher Decryptor</h1>
       <div className="cipher-wrap" style={{ maxWidth: "800px" }}>
         <div style={{ margin: "20px", width: "100%" }}>
+          <p className="form-label">Message to encrypt:</p>
+          <textarea
+            className="form-textarea"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+          <p className="form-label">Key:</p>
+          <input
+            className="form-input"
+            type="text"
+            value={keyE}
+            onChange={(e) => setKeyE(e.target.value)}
+          />
+          <button className="form-button" onClick={encrypt}>
+            Encrypt
+          </button>
+          <p className="form-label">Encrypted Text:</p>
+          <textarea
+            className="form-textarea"
+            rows="4"
+            value={encryptedText}
+            readOnly
+          />
+        </div>
+
+        <div style={{ margin: "20px", width: "100%" }}>
           <p className="form-label">Cipher Text:</p>
           <textarea
             value={cipherText}
@@ -101,31 +127,6 @@ const Cipher = () => {
             value={decryptedText}
             readOnly
             className="form-textarea"
-          />
-        </div>
-        <div style={{ margin: "20px", width: "100%" }}>
-          <p className="form-label">Message to decrypt:</p>
-          <textarea
-            className="form-textarea"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-          <p className="form-label">Key:</p>
-          <input
-            className="form-input"
-            type="text"
-            value={keyE}
-            onChange={(e) => setKeyE(e.target.value)}
-          />
-          <button className="form-button" onClick={encrypt}>
-            Encrypt
-          </button>
-          <p className="form-label">Encrypted Text:</p>
-          <textarea
-            className="form-textarea"
-            rows="4"
-            value={encryptedText}
-            readOnly
           />
         </div>
       </div>
